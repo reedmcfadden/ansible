@@ -1,0 +1,10 @@
+- name: Install htop
+  dnf: name={{item}}
+  with_items:
+    - htop
+    - tmux
+    - ffmpeg
+    - vim
+    - nodejs
+    - keepassxc
+    - brightnessctl 
