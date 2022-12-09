@@ -8,3 +8,5 @@
     - nodejs
     - keepassxc
     - brightnessctl 
+    - cronie
+    - cronie-anacron
