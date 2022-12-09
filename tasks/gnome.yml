@@ -1,5 +1,7 @@
 - name: Install python-psutil package
   dnf: name=python-psutil
+- name: Install arc theme
+  dnf: name=arc-theme
 
 - name: Copy wallpaper file
   copy: src=files/wallpaper.jpg dest=/home/reedmcfadden/.wallpaper.jpg owner=reedmcfadden group=reedmcfadden mode=600
@@ -14,3 +16,7 @@
 - name: Set lock screen background
   become_user: reedmcfadden
   dconf: key="/org/gnome/desktop/screensaver/picture-uri" value="'file:///home/reedmcfadden/.lockscreen.jpg'"
+
+- name: Set GTK theme
+  become_user: reedmcfadden
+  dconf: key="/org/gnome/desktop/interface/gtk-theme" value="'Arc'"
