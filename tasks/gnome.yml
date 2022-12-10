@@ -20,3 +20,11 @@
 - name: Set GTK theme
   become_user: reedmcfadden
   dconf: key="/org/gnome/desktop/interface/gtk-theme" value="'Arc'"
+
+- name: Set move to workspace 1 keybind
+  become_user: reedmcfadden
+  dconf: key="org/gnome/desktop/wm/keybindings" value="move-to-workspace-1=['<Alt>1']"
+
+- name: Set move to workspace 2 keybind
+  become_user: reedmcfadden
+  dconf: key="org/gnome/desktop/wm/keybindings" value="move-to-workspace-2=['<Alt>2']"

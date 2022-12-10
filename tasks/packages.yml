@@ -1,6 +1,7 @@
 - name: Install htop
-  dnf: name={{item}}
-  with_items:
+  dnf: 
+    name: "{{ item }}"
+  loop:
     - htop
     - tmux
     - ffmpeg
