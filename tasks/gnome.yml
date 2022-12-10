@@ -23,8 +23,8 @@
 
 - name: Set move to workspace 1 keybind
   become_user: reedmcfadden
-  dconf: key="org/gnome/desktop/wm/keybindings" value="move-to-workspace-1=['<Alt>1']"
+  dconf: key="/org/gnome/desktop/wm/keybindings" value="move-to-workspace-1=['<Alt>1']"
 
 - name: Set move to workspace 2 keybind
   become_user: reedmcfadden
-  dconf: key="org/gnome/desktop/wm/keybindings" value="move-to-workspace-2=['<Alt>2']"
+  dconf: key="/org/gnome/desktop/wm/keybindings" value="move-to-workspace-2=['<Alt>2']"
