@@ -55,3 +55,8 @@
     - { key: "/org/gnome/desktop/wm/keybindings/move-to-workspace-9", value: "['<Shift><Alt>9']" }
     - { key: "/org/gnome/desktop/wm/keybindings/move-to-workspace-10", value: "['<Shift><Alt>0']" }
 
+- name: Turn off gnome automate update downloads (eats a lot of CPU)
+  become_user: reedmcfadden
+  dconf: "key=/org/gnome/software/download-updates value=false"
+
+
