@@ -11,3 +11,6 @@
     - brightnessctl 
     - cronie
     - cronie-anacron
+    - kitty
+ 
+# TODO - split out packages into 'functional units'
