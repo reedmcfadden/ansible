@@ -1,6 +1,8 @@
 - name: Install htop
   dnf: 
     name: "{{ item }}"
+      # TODO - split out packages into 'functional units' (ex: setup desktop,
+      # cpp development, video, gaming, etc.)
   loop:
     - htop
     - tmux
@@ -12,5 +14,8 @@
     - cronie
     - cronie-anacron
     - kitty
+    - pavucontrol
+    - nitrogen
+    - virt-manager
+    - arandr
  
-# TODO - split out packages into 'functional units'

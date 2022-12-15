@@ -1,0 +1,12 @@
+NOTE: reference existing ansible configs on github and such
+
+1. better user creation
+1. split out packages into `modules`, for a specific task (ex: cpp development,
+   desktop packages, etc.)
+1. automate ssh keys and such safely
+1. automate git configs
+1. automate dotfiles install from repo
+1. automate lsp setup
+1. automate vim plug install and coc install
+1. randomize wallpaper and lockscreen to choose randomly on each cronjob pull
+   from the wallpapers folder

@@ -4,14 +4,18 @@
   dnf: name=arc-theme
 
 - name: Copy wallpaper file
-  copy: src=files/wallpaper.jpg dest=/home/reedmcfadden/.wallpaper.jpg owner=reedmcfadden group=reedmcfadden mode=600
+  copy: src=files/wallpapers/wallpaper.jpg dest=/home/reedmcfadden/.wallpaper.jpg owner=reedmcfadden group=reedmcfadden mode=600
 
 - name: Set GNOME Wallpaper
   become_user: reedmcfadden
+    # TODO - don't copy file to ~/.wallpaper.jpg... just copy it to pictures
+    # and use that
   dconf: key="/org/gnome/desktop/background/picture-uri" value="'file:///home/reedmcfadden/.wallpaper.jpg'"
 
 - name: Copy lockscreenfile
-  copy: src=files/lockscreen.jpg dest=/home/reedmcfadden/.lockscreen.jpg owner=reedmcfadden group=reedmcfadden mode=600
+    # TODO - don't copy file to as a dotfile in home dir... just copy it to pictures
+    # and use that
+  copy: src=files/wallpapers/lockscreen.jpg dest=/home/reedmcfadden/.lockscreen.jpg owner=reedmcfadden group=reedmcfadden mode=600
 
 - name: Set lock screen background
   become_user: reedmcfadden
