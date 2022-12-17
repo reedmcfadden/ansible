@@ -6,7 +6,7 @@
   loop:
     - htop
     - tmux
-    - ffmpeg
+      #    - ffmpeg
     - vim
     - nodejs
     - keepassxc
