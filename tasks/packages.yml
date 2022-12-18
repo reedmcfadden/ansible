@@ -1,22 +1,16 @@
 - name: Install htop
   dnf: 
-    name: "{{ item }}"
-      # TODO - split out packages into 'functional units' (ex: setup desktop,
-      # cpp development, video, gaming, etc.)
+  name: "{{ item }}"
+    # TODO - split out packages into 'functional units' (ex: setup desktop,
+    # cpp development, video, gaming, etc.)
   loop:
     - htop
     - tmux
-      #    - ffmpeg
+    - ffmpeg-free
     - vim
     - nodejs
     - keepassxc
-    - brightnessctl 
     - cronie
     - cronie-anacron
-    - kitty
-    - pavucontrol
-    - nitrogen
     - virt-manager
-    - arandr
-    - i3
- 
+
