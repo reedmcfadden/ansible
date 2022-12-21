@@ -1,18 +1,25 @@
-- name: Install htop
+- name: Install coding tools
   dnf: name={{item}}
   with_items:
-    - htop
     - tmux
-    - ffmpeg-free
     - vim
     - nodejs
-    - keepassxc
+
+- name: Install cronjob packages
+  dnf: name={{item}}
+  with_items:
     - cronie
     - cronie-anacron
-    - virt-manager
 
-      # TODO - split out packages into 'functional units' (ex: setup desktop,
-      # cpp development, video, gaming, etc.)
+- name: Install misc packages
+  dnf: name={{item}}
+  with_items:
+    - gnome-tweaks
+    - keepassxc
+    - htop
+    - virt-manager
+    - ffmpeg-free
+
       # TODO - automate vscode Install
       # sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
       # sudo sh -c 'echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.microsoft.com/yumrepos/vscode\nenabled=1\ngpgcheck=1\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc" > /etc/yum.repos.d/vscode.repo'
@@ -22,3 +29,5 @@
       # TODO - automate dropbox install
       # cd ~ && wget -O - "https://www.dropbox.com/download?plat=lnx.x86_64" | tar xzf -
       # ~/.dropbox-dist/dropboxd
+      #
+      # TODO - add dropbox daemon cronjob or service

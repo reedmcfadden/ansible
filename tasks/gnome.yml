@@ -21,9 +21,9 @@
   become_user: reedmcfadden
   dconf: key="/org/gnome/desktop/screensaver/picture-uri" value="'file:///home/reedmcfadden/.lockscreen.jpg'"
 
-- name: Set GTK theme
-  become_user: reedmcfadden
-  dconf: key="/org/gnome/desktop/interface/gtk-theme" value="'Arc'"
+    #- name: Set GTK theme
+    #  become_user: reedmcfadden
+    #  dconf: key="/org/gnome/desktop/interface/gtk-theme" value="'Arc'"
 
 - name: Turn off gnome automate update downloads (eats a lot of CPU)
   become_user: reedmcfadden
