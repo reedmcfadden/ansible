@@ -1,5 +1,6 @@
 NOTE: reference existing ansible configs on github and such
 
+1. automatically download/clone kanban repo
 1. better user creation
 1. split out packages into `modules`, for a specific task (ex: cpp development,
    desktop packages, etc.)
@@ -10,4 +11,4 @@ NOTE: reference existing ansible configs on github and such
 1. automate vim plug install and coc install
 1. randomize wallpaper and lockscreen to choose randomly on each cronjob pull
    from the wallpapers folder
-1. automate kitty theme
+1. double check files for additional lingering todos
