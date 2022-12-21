@@ -1,29 +1,27 @@
 - name: Install python-psutil package
   dnf: name=python-psutil
-- name: Install arc theme
-  dnf: name=arc-theme
 
+# TODO - just set wallpaper randomly from what is in the files/wallpapers
+# dir. also, make a symlink to ~/Pictures/Wallpaper just to make it easy to
+# upload new ones. do the same for lockscreen
 - name: Copy wallpaper file
   copy: src=files/wallpapers/wallpaper.jpg dest=/home/reedmcfadden/.wallpaper.jpg owner=reedmcfadden group=reedmcfadden mode=600
 
 - name: Set GNOME Wallpaper
   become_user: reedmcfadden
-    # TODO - don't copy file to ~/.wallpaper.jpg... just copy it to pictures
-    # and use that
   dconf: key="/org/gnome/desktop/background/picture-uri" value="'file:///home/reedmcfadden/.wallpaper.jpg'"
 
 - name: Copy lockscreenfile
-    # TODO - don't copy file to as a dotfile in home dir... just copy it to pictures
-    # and use that
   copy: src=files/wallpapers/lockscreen.jpg dest=/home/reedmcfadden/.lockscreen.jpg owner=reedmcfadden group=reedmcfadden mode=600
 
 - name: Set lock screen background
   become_user: reedmcfadden
   dconf: key="/org/gnome/desktop/screensaver/picture-uri" value="'file:///home/reedmcfadden/.lockscreen.jpg'"
 
-    #- name: Set GTK theme
-    #  become_user: reedmcfadden
-    #  dconf: key="/org/gnome/desktop/interface/gtk-theme" value="'Arc'"
+# TODO - consider setting a theme, just not arc. 
+#- name: Set GTK theme
+#  become_user: reedmcfadden
+#  dconf: key="/org/gnome/desktop/interface/gtk-theme" value="'Arc'"
 
 - name: Turn off gnome automate update downloads (eats a lot of CPU)
   become_user: reedmcfadden
